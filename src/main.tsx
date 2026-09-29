@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { ArrowDown, ArrowRight, Check, ExternalLink, ScanLine } from 'lucide-react';
 import './style.css';
 import thomasPhoto from './assets/thomas-beach.jpg';
+import thomasProfile from './assets/thomas-freesistant-profile.jpg';
 import lukasPhoto from './assets/lukas-kazimierski.webp';
 
 const EMAIL = 'ThomasOlesch.Copywriting@web.de';
@@ -159,7 +160,7 @@ function Home() {
         </Section>
 
         <Section eye="Wer deine Website röntgt" title="Thomas Olesch" intro="Conversion Copywriter">
-          <div className="profileCard"><img src={thomasPhoto} alt="Thomas Olesch" className="profileImg" /><div className="profileBody"><p>Ich schaue nicht zuerst darauf, ob ein Satz besonders clever klingt.</p><p>Mich interessiert, warum ein Mensch auf deiner Website landet und trotzdem nicht den nächsten Schritt macht.</p><p>Dafür verbinde ich Positionierung, Conversion Copy und Suchintention. Damit deine Website nicht einfach beschreibt, was du machst, sondern deinem Wunschkunden zeigt, warum dein Angebot für seine Situation relevant ist.</p><div className="socialRow"><a href={INSTAGRAM} target="_blank" rel="noreferrer">Instagram <ExternalLink /></a><a href={LINKEDIN} target="_blank" rel="noreferrer">LinkedIn <ExternalLink /></a></div></div></div>
+          <div className="profileCard"><img src={thomasProfile} alt="Thomas Olesch" className="profileImg" /><div className="profileBody"><p>Ich schaue nicht zuerst darauf, ob ein Satz besonders clever klingt.</p><p>Mich interessiert, warum ein Mensch auf deiner Website landet und trotzdem nicht den nächsten Schritt macht.</p><p>Dafür verbinde ich Positionierung, Conversion Copy und Suchintention. Damit deine Website nicht einfach beschreibt, was du machst, sondern deinem Wunschkunden zeigt, warum dein Angebot für seine Situation relevant ist.</p><div className="socialRow"><a href={INSTAGRAM} target="_blank" rel="noreferrer">Instagram <ExternalLink /></a><a href={LINKEDIN} target="_blank" rel="noreferrer">LinkedIn <ExternalLink /></a></div></div></div>
         </Section>
 
         <section><div className="wrap"><p className="eye">Und danach?</p><h2>Du bekommst zuerst Klarheit. Was du daraus machst, entscheidest du.</h2><p className="intro">Der Website-Röntgen ist kostenlos. Ich zeige dir deine drei wichtigsten Hebel und sage dir auch, was du selbst verändern kannst. Wenn wir dabei feststellen, dass du Unterstützung brauchst, können wir danach gemeinsam an der Umsetzung arbeiten – zum Beispiel an deiner Positionierung, deinen Website- oder Landingpage-Texten, SEO, E-Mail-Marketing oder der gesamten Conversion-Strecke. Erst kommt der Befund. Dann entscheiden wir, was überhaupt sinnvoll ist.</p></div></section>
