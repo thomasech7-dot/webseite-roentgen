@@ -4,37 +4,17 @@ import { ArrowDown, ArrowRight, Check, ExternalLink, ScanLine } from 'lucide-rea
 import './style.css';
 import thomasPhoto from './assets/thomas-beach.jpg';
 import lukasPhoto from './assets/lukas-kazimierski.webp';
-import markusPhoto from './assets/markus-bocionek.jpg';
-import fwaLogo from './assets/freedom-writer-academy.jpeg';
-
-const painCards = [
-  [
-    'Anfragen bleiben aus',
-    'Besucher landen auf deiner Seite, aber melden sich nicht.',
-    'Du hast Sichtbarkeit oder sogar Klicks – nur kommt zu wenig zurück. Der eigentliche Engpass steckt oft nicht im Traffic, sondern darin, dass Menschen nicht schnell genug verstehen, warum sie ausgerechnet bei dir anfragen sollten.',
-  ],
-  [
-    'Unsicherheit bei Änderungen',
-    'Du änderst Texte, Design oder CTA – ohne zu wissen, ob du gerade das Richtige anfasst.',
-    'Dann kostet jede Änderung Zeit, aber die Conversion bleibt trotzdem unklar. Genau das sorgt dafür, dass du weiter ausprobierst, statt gezielt die Stellen zu verbessern, die wirklich Anfragen blockieren.',
-  ],
-  [
-    'Gemischte Signale',
-    'Google, Botschaft und Wunschkunde ziehen noch nicht sauber in dieselbe Richtung.',
-    'Wenn Suchintention, Positionierung und Nutzerführung nicht zusammenpassen, wird deine Seite fachlich zwar stark wahrgenommen – aber nicht zwingend als nächster logischer Schritt für eine Anfrage.',
-  ],
-];
 
 const diagnostics = [
-  ['01', 'Conversion & Nutzerführung', 'Versteht ein neuer Besucher in wenigen Sekunden, für wen die Seite ist, welches Problem du löst und was als Nächstes passieren soll?'],
-  ['02', 'Copy & Positionierung', 'Spricht deine Seite über das, was deine Zielgruppe wirklich beschäftigt – oder vor allem über dein Angebot aus deiner Sicht?'],
-  ['03', 'SEO & Suchintention', 'Passt die Seite zu den Suchanfragen deiner Wunschkunden oder sendet sie Google und Besuchern noch gemischte Signale?'],
+  ['01', 'Conversion & Nutzerführung', 'Versteht ein neuer Besucher schnell, dass er hier mit seinem Problem richtig ist und welcher nächste Schritt für ihn sinnvoll ist?'],
+  ['02', 'Copy & Positionierung', 'Erkennt sich dein Wunschkunde wieder oder muss er erst selbst herausfinden, warum dein Angebot für ihn relevant ist?'],
+  ['03', 'SEO & Suchintention', 'Passt das, wonach Menschen suchen, zu dem, was sie auf deiner Seite vorfinden, oder entsteht schon beim Einstieg ein Bruch?'],
 ];
 
 const steps = [
-  ['01', 'Website schicken', 'Du trägst deine URL und E-Mail ein und gibst mir kurz Kontext zu Ziel, Zielgruppe und dem, was dich aktuell nervt.'],
-  ['02', 'Ich prüfe die kritischen Stellen', 'Ich schaue auf Einstiegsbereich, Nutzerführung, Positionierung und Suchintention – also genau auf die Punkte, an denen Anfragen oft verloren gehen.'],
-  ['03', 'Du bekommst drei priorisierte Hebel', 'Kein Roman, kein Blabla: eine klare Reihenfolge, was zuerst geändert werden sollte und warum.'],
+  ['01', 'Du schickst mir deine Website.', 'URL, E-Mail und ein paar kurze Informationen reichen, damit ich weiß, worauf ich achten muss.'],
+  ['02', 'Ich schaue dort hin, wo Anfragen verloren gehen können.', 'Hero, Positionierung, Copy, Nutzerführung, Conversion und Suchintention.'],
+  ['03', 'Du bekommst deine drei wichtigsten Hebel.', 'Priorisiert und verständlich. Damit du weißt, was zuerst geändert werden sollte und was danach Sinn ergibt.'],
 ];
 
 function Header() {
@@ -69,36 +49,8 @@ function Footer() {
       <nav>
         <a href="/impressum">Impressum</a>
         <a href="/datenschutz">Datenschutz</a>
-        <a href="https://www.instagram.com/thomas.copyconversion/" target="_blank" rel="noreferrer">Instagram</a>
-        <a href="https://www.linkedin.com/in/thomas-olesch-a42627317/" target="_blank" rel="noreferrer">LinkedIn</a>
       </nav>
     </footer>
-  );
-}
-
-function Scanner() {
-  return (
-    <div className="scanner">
-      <div className="panel">
-        <div className="dots">
-          ● ● ● <span>analyse / hero / conversion</span>
-        </div>
-        <div className="mock">
-          <i />
-          <h4 />
-          <h4 />
-          <h4 />
-          <p />
-          <p />
-          <button />
-          <div className="score">
-            <ScanLine />
-            Klarheits-Score <b>68 / 100</b>
-          </div>
-        </div>
-        <div className="beam" />
-      </div>
-    </div>
   );
 }
 
@@ -157,9 +109,7 @@ function LeadForm() {
         <label>
           Was soll deine Website vor allem erreichen? *
           <select name="ziel" required defaultValue="">
-            <option value="" disabled>
-              Bitte wählen
-            </option>
+            <option value="" disabled>Bitte wählen</option>
             <option>Mehr Anfragen</option>
             <option>Mehr Termine</option>
             <option>Mehr Verkäufe</option>
@@ -201,193 +151,108 @@ function Home() {
         <section className="hero">
           <div className="heroIn">
             <div>
-              <p className="eye">Wenn du fachlich überzeugst, aber online zu wenig davon ankommt</p>
+              <p className="eye">Wenn Besucher kommen, aber Anfragen ausbleiben</p>
               <h1>
-                Du kannst richtig gut sein. Wenn deine Website daraus kein Vertrauen macht, bleiben <em>qualifizierte Anfragen</em> trotzdem aus.
+                Deine Website kann gut aussehen und trotzdem jeden Tag <em>qualifizierte Anfragen verlieren.</em>
               </h1>
               <p className="lead">
-                Menschen kommen auf deine Seite mit einer einfachen Frage: Bist du der Richtige für mein Problem?
-                Wenn Relevanz, Vertrauen und der nächste Schritt nicht schnell genug klar werden, vergleichen sie weiter.
-                Ich finde die Stellen, an denen genau diese Entscheidung kippt.
+                Ich prüfe, warum Besucher nicht anfragen, wo sie aussteigen und ob deine Website wirklich das Problem trifft,
+                mit dem deine Wunschkunden zu dir kommen. Danach weißt du, welche drei Hebel du zuerst anfassen solltest.
               </p>
               <a className="btn" href="#analyse">
-                Kostenlosen Website-Check anfordern <ArrowDown />
+                Kostenlose Analyse anfordern <ArrowDown />
               </a>
-              <small>Kostenlos. Persönlich geprüft. Mit drei priorisierten Hebeln für mehr Anfragen.</small>
+              <small>Kostenlos. Persönlich geprüft. Drei priorisierte Hebel.</small>
             </div>
-            <Scanner />
+            <div className="profileCard heroImageCard">
+              <img src={thomasPhoto} alt="Thomas Olesch mit Laptop" className="profileImg" />
+              <div className="profileBody">
+                <p className="eye">Website-Röntgen</p>
+                <p>Analyse von Copy, Positionierung, Conversion und Suchintention.</p>
+              </div>
+            </div>
           </div>
         </section>
 
         <Section
-          eye="Der Urschmerz hinter zu wenig Conversion"
-          title="Du willst nicht ständig erklären, nachfassen oder hoffen, dass der nächste Besucher schon versteht, warum er bei dir richtig ist."
-          intro="Das Problem ist nicht einfach eine schlechte Website. Es ist die Lücke zwischen dem Wert deiner Leistung und dem Vertrauen, das online davon ankommt. Genau diese Lücke kostet passende Anfragen."
+          eye="Deine Website ist selten das eigentliche Problem"
+          title="Deine Kunden stehen morgens nicht auf und denken: „Ich brauche bessere Website-Texte.“"
+          intro="Sie fragen sich, warum zu wenige passende Anfragen kommen, warum Besucher wieder verschwinden oder warum sie ihr Angebot im Gespräch immer wieder erklären müssen. Genau dort beginnt eine Website, die verkauft: bei dem Problem, das dein Kunde bereits spürt."
         >
           <div className="grid3">
-            {painCards.map((x, i) => (
-              <article className="card" key={x[0]}>
-                <b>0{i + 1}</b>
-                <h3>{x[1]}</h3>
-                <p>{x[2]}</p>
-              </article>
-            ))}
+            <article className="card"><b>01</b><h3>„Warum kommen so wenige passende Anfragen?“</h3><p>Besucher sind vielleicht da. Aber sie spüren nicht schnell genug, warum dein Angebot für ihre Situation relevant ist.</p></article>
+            <article className="card"><b>02</b><h3>„Warum schauen Leute und melden sich trotzdem nicht?“</h3><p>Interesse entsteht, aber der nächste Schritt wirkt nicht logisch, klar oder dringend genug.</p></article>
+            <article className="card"><b>03</b><h3>„Warum muss ich mein Angebot immer wieder erklären?“</h3><p>Dann trägt deine Website noch nicht genug Vorarbeit für Vertrauen, Orientierung und Entscheidung.</p></article>
           </div>
         </Section>
 
         <Section
           alt
-          eye="Der Röntgen-Blick"
+          eye="Wo verliert deine Website potenzielle Kunden?"
           title="Ich zeige dir die Stellen, an denen deine Website gerade Potenzial liegen lässt."
-          intro="Du bekommst Klarheit darüber, welche Änderungen zuerst Sinn ergeben – und was du selbst umsetzen kannst."
+          intro="Keine allgemeine Bewertung von schön oder nicht schön. Ich schaue darauf, was ein potenzieller Kunde versteht, fühlt und als Nächstes tut."
         >
           <div className="grid3 diag">
             {diagnostics.map((x) => (
-              <article className="card" key={x[0]}>
-                <b>{x[0]}</b>
-                <h3>{x[1]}</h3>
-                <p>{x[2]}</p>
-              </article>
+              <article className="card" key={x[0]}><b>{x[0]}</b><h3>{x[1]}</h3><p>{x[2]}</p></article>
             ))}
           </div>
         </Section>
 
-        <Section eye="So läuft es ab" title="In drei Schritten weißt du, wo es hakt.">
+        <Section eye="So funktioniert das Röntgen" title="In drei Schritten weißt du, wo du ansetzen solltest.">
           <div className="grid3 steps">
             {steps.map((x) => (
-              <article key={x[0]}>
-                <b>{x[0]}</b>
-                <h3>{x[1]}</h3>
-                <p>{x[2]}</p>
-              </article>
+              <article key={x[0]}><b>{x[0]}</b><h3>{x[1]}</h3><p>{x[2]}</p></article>
             ))}
           </div>
         </Section>
 
         <Section
           alt
-          eye="Feedback & Projekt-Einblick"
+          eye="Was andere am Röntgen-Blick sehen"
           title="Vertrauen entsteht nicht durch große Versprechen, sondern durch konkrete Arbeit."
-          intro="Zwei echte Einblicke: ein klares Kundenfeedback und ein konkretes Projekt aus deinem Website- und Copy-Umfeld."
         >
           <div className="proofGrid">
             <article className="quoteCard">
               <span className="quoteMark">“</span>
               <h3>Claudia Kirsch</h3>
               <p className="role">Unternehmensberatung</p>
-              <blockquote>
-                „Ich bin wirklich beeindruckt, wie individuell Sie sich in meine unternehmerischen Ziele und mein
-                Geschäftsmodell hineingedacht haben.
-                <br />
-                <br />
-                Ihre Anregungen zur Optimierung meiner Webseite sind konkret und nachvollziehbar. Sie haben mich
-                überzeugt, wie wichtig die Berücksichtigung der Userperspektive und eine klare SEO-Struktur für die
-                Sichtbarkeit und mehr Anfragen über die Homepage sind. Vielen Dank!“
-              </blockquote>
+              <blockquote>„Die Landingpage sieht nach einem produktiven Schub aus, wie Sie den Röntgen-Blick beschreiben und werblich überzeugend präsentieren.“</blockquote>
             </article>
-
             <article className="projectCard">
               <img src={lukasPhoto} alt="Lukas Kazimierski" />
               <div className="projectBody">
                 <p className="projectEyebrow">Projekt-Einblick</p>
                 <h3>Lukas Kazimierski</h3>
                 <p className="role">Personal Trainer</p>
-                <p>
-                  Ein konkretes Beispiel aus meinem Website- und Copywriting-Umfeld: Positionierung,
-                  Website-Kommunikation und ein klarerer Einstieg für mehr Orientierung und mehr passende Anfragen.
-                </p>
-                <a href="https://www.lukas-kazimierski.de" target="_blank" rel="noreferrer">
-                  Website ansehen <ExternalLink />
-                </a>
+                <p>Gute Leistung allein bringt noch keine Anfrage, wenn der Besucher nicht schnell versteht, warum sie gerade für ihn relevant ist. Im Mittelpunkt stand die Positionierung und die Frage, wie seine Leistung klarer kommuniziert wird.</p>
+                <a href="https://www.lukas-kazimierski.de" target="_blank" rel="noreferrer">Projekt ansehen <ExternalLink /></a>
               </div>
             </article>
           </div>
         </Section>
 
         <Section
-          eye="Meine Expertise"
-          title="Conversion entsteht, wenn Relevanz, Vertrauen und nächster Schritt zusammenpassen."
-          intro="Genau darauf ist mein Blick ausgerichtet: zu verstehen, wie aus Aufmerksamkeit eine qualifizierte Anfrage wird und welche Botschaft, Struktur oder Entscheidungshürde das gerade verhindert."
-        >
-          <div className="grid3">
-            <article className="card">
-              <b>01 · Relevanz</b>
-              <h3>Der Besucher muss sich gemeint fühlen.</h3>
-              <p>Ich prüfe, ob die Seite beim echten Problem deiner Zielgruppe startet und schnell genug zeigt: Hier versteht jemand meine Situation.</p>
-            </article>
-            <article className="card">
-              <b>02 · Vertrauen</b>
-              <h3>Gute Leistung muss online glaubwürdig werden.</h3>
-              <p>Positionierung, Beweise, Sprache und Klarheit müssen gemeinsam das Risiko aus der Entscheidung nehmen. Sonst bleibt Expertise nur eine Behauptung.</p>
-            </article>
-            <article className="card">
-              <b>03 · Conversion</b>
-              <h3>Der nächste Schritt muss logisch wirken.</h3>
-              <p>Ich schaue darauf, ob Nutzerführung und CTA aus dem aufgebauten Vertrauen folgen, damit Interesse nicht kurz vor der Anfrage verpufft.</p>
-            </article>
-          </div>
-        </Section>
-
-        <section className="trigger">
-          <div className="wrap center">
-            <p className="eye">Mehr Traffic ist nicht automatisch mehr Geschäft</p>
-            <h2>Wenn deine Seite die Entscheidung nicht leichter macht, schickst du mit mehr Sichtbarkeit nur mehr Menschen auf denselben Engpass.</h2>
-            <p className="intro">
-              Dann entstehen Klicks, Besuche und vielleicht sogar Interesse, aber zu wenig davon wird zur qualifizierten Anfrage.
-              Deshalb prüfe ich zuerst die Conversion-Stellen, bevor du noch mehr Energie in Reichweite steckst.
-            </p>
-            <a className="btn" href="#analyse">
-              Kostenlose Analyse sichern <ArrowRight />
-            </a>
-          </div>
-        </section>
-
-        <Section
-          alt
-          eye="Wer hinter dem Röntgen steckt"
-          title="Thomas Olesch · Conversion Copywriter"
-          intro="Ich unterstütze Unternehmer dabei, aus Website-Besuchern qualifizierte Anfragen zu machen. Dafür verbinde ich Positionierung, Copy, Nutzerführung und Suchintention zu einer Seite, die nicht nur informiert, sondern eine Entscheidung vorbereitet."
+          eye="Wer deine Website röntgt"
+          title="Thomas Olesch"
+          intro="Conversion Copywriter"
         >
           <div className="profileCard">
             <img src={thomasPhoto} alt="Thomas Olesch" className="profileImg" />
             <div className="profileBody">
-              <p>
-                Mein Fokus liegt nicht auf möglichst cleveren Formulierungen. Mich interessiert, warum ein potenzieller Kunde zögert:
-                Fehlt Relevanz? Fehlt Vertrauen? Ist das Angebot nicht klar genug? Oder ist der nächste Schritt zu schwammig?
-                Genau dort setze ich an.
-              </p>
-              <div className="profileActions">
-                <a className="btn outline" href="https://www.instagram.com/thomas.copyconversion/" target="_blank" rel="noreferrer">
-                  Instagram
-                </a>
-                <a className="btn outline" href="https://www.linkedin.com/in/thomas-olesch-a42627317/" target="_blank" rel="noreferrer">
-                  LinkedIn
-                </a>
-                <a className="btn outline" href="mailto:ThomasOlesch.Copywriting@web.de">
-                  E-Mail schreiben
-                </a>
-                <a
-                  className="btn outline"
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://calendly.com/thomasolesch-copywriting/kostenloses-kennenlerngespraech-30-minuten"
-                >
-                  Erstgespräch buchen <ExternalLink />
-                </a>
-              </div>
+              <p>Ich schaue nicht zuerst darauf, ob ein Satz besonders clever klingt.</p>
+              <p>Mich interessiert, warum ein Mensch auf deiner Website landet und trotzdem nicht den nächsten Schritt macht.</p>
+              <p>Dafür verbinde ich Positionierung, Conversion Copy und Suchintention. Damit deine Website nicht einfach beschreibt, was du machst, sondern deinem Wunschkunden zeigt, warum das für sein Problem relevant ist.</p>
             </div>
           </div>
         </Section>
 
         <section>
           <div className="wrap">
-            <p className="eye">Was nach dem Röntgen passiert</p>
-            <h2>Du bekommst zuerst Klarheit. Die Umsetzung entscheidest du danach.</h2>
+            <p className="eye">Und danach?</p>
+            <h2>Du bekommst zuerst Klarheit. Was du daraus machst, entscheidest du.</h2>
             <p className="intro">
-              Das Webseite-Röntgen ist kostenlos. Du bekommst von mir die drei wichtigsten Hebel und eine Einschätzung,
-              was du selbst ändern kannst. Wenn du bei der Umsetzung Unterstützung möchtest, kann ich anschließend
-              kostenpflichtig übernehmen – zum Beispiel Positionierung und Copy, Website- und Landingpage-Texte,
-              SEO-Optimierung oder E-Mail-Marketing. Ob und was davon Sinn ergibt, besprechen wir erst nach dem Befund.
+              Der Website-Röntgen ist kostenlos. Ich zeige dir deine drei wichtigsten Hebel und sage dir auch, was du selbst verändern kannst. Wenn wir dabei feststellen, dass du Unterstützung brauchst, können wir danach gemeinsam an der Umsetzung arbeiten – zum Beispiel an deiner Positionierung, deinen Website- oder Landingpage-Texten, SEO, E-Mail-Marketing oder der gesamten Conversion-Strecke. Erst kommt der Befund. Dann entscheiden wir, was überhaupt sinnvoll ist.
             </p>
           </div>
         </section>
@@ -395,23 +260,10 @@ function Home() {
         <section id="analyse" className="alt">
           <div className="wrap formGrid">
             <div>
-              <p className="eye">Webseite-Röntgen</p>
-              <h2>Schick mir die Seite, bei der du gerade nicht weißt, warum zu wenig zurückkommt.</h2>
-              <p className="intro">
-                Du gibst mir ein paar Minuten Kontext. Ich schaue mir die Seite persönlich an und schicke dir die
-                wichtigsten Befunde per E-Mail.
-              </p>
-              <div className="checks">
-                <p>
-                  <Check /> Persönlich von Thomas geprüft
-                </p>
-                <p>
-                  <Check /> Drei klare, priorisierte Hebel
-                </p>
-                <p>
-                  <Check /> Kein automatischer Standard-Output
-                </p>
-              </div>
+              <p className="eye">Dein kostenloses Website-Röntgen</p>
+              <h2>Schick mir die Seite, bei der du gerade nicht verstehst, warum zu wenig zurückkommt.</h2>
+              <p className="intro">Du gibst mir kurz Kontext. Ich schaue mir deine Seite persönlich an und schicke dir anschließend meine wichtigsten Befunde.</p>
+              <div className="checks"><p><Check /> Persönlich von Thomas geprüft</p><p><Check /> Drei klare, priorisierte Hebel</p><p><Check /> Kein automatischer Standard-Output</p></div>
             </div>
             <LeadForm />
           </div>
@@ -422,19 +274,9 @@ function Home() {
             <div>
               <p className="eye">Lieber im Gespräch?</p>
               <h2>Du willst es lieber direkt besprechen?</h2>
-              <p className="intro">
-                Wenn du die Seite gemeinsam besprechen möchtest, buch dir ein kostenloses 30-minütiges
-                Kennenlerngespräch.
-              </p>
+              <p className="intro">Wenn du deine Website und deine aktuelle Situation lieber direkt besprechen möchtest, kannst du dir ein kostenloses 30-minütiges Kennenlerngespräch buchen.</p>
             </div>
-            <a
-              className="btn outline"
-              target="_blank"
-              rel="noreferrer"
-              href="https://calendly.com/thomasolesch-copywriting/kostenloses-kennenlerngespraech-30-minuten"
-            >
-              Kostenloses Erstgespräch <ExternalLink />
-            </a>
+            <a className="btn outline" target="_blank" rel="noreferrer" href="https://calendly.com/thomasolesch-copywriting/kostenloses-kennenlerngespraech-30-minuten">Kostenloses Erstgespräch <ExternalLink /></a>
           </div>
         </section>
       </main>
@@ -452,72 +294,19 @@ function Legal({ privacy = false }: any) {
         <h1>{privacy ? 'Datenschutzerklärung' : 'Impressum'}</h1>
         {privacy ? (
           <>
-            <h2>1. Verantwortlicher</h2>
-            <p>
-              Thomas Olesch – Copywriting
-              <br />
-              Thomas Olesch
-              <br />
-              Sorsumer Hauptstraße 64
-              <br />
-              31139 Hildesheim
-              <br />
-              Deutschland
-              <br />
-              <a href="mailto:ThomasOlesch.Copywriting@web.de">ThomasOlesch.Copywriting@web.de</a>
-            </p>
-            <h2>2. Hosting</h2>
-            <p>
-              Diese Website wird über Vercel bereitgestellt. Beim Aufruf können technisch notwendige Daten wie
-              IP-Adresse, Zeitpunkt, aufgerufene Seite, Browser- und Geräteinformationen in Server-Protokollen
-              verarbeitet werden. Dies dient der sicheren und stabilen Bereitstellung der Website auf Grundlage von Art.
-              6 Abs. 1 lit. f DSGVO.
-            </p>
-            <h2>3. Webseite-Röntgen und E-Mail-Übertragung</h2>
-            <p>
-              Wenn du das Formular absendest, verarbeiten wir deine URL, E-Mail-Adresse sowie deine freiwilligen Angaben,
-              um deine Anfrage zu prüfen, den Befund zu erstellen und dich dazu zu kontaktieren. Die Übertragung wird
-              technisch durch FormSubmit unterstützt und als E-Mail an Thomas Olesch weitergeleitet.
-            </p>
-            <h2>4. Calendly</h2>
-            <p>Der Link zum Kennenlerngespräch führt zu Calendly. Eine Verbindung entsteht erst, wenn du den Link aktiv anklickst.</p>
-            <h2>5. Externe Anbieter und Drittlandübermittlung</h2>
-            <p>Soweit Daten außerhalb des EWR verarbeitet werden, erfolgt dies unter Beachtung der gesetzlichen Voraussetzungen und geeigneter Garantien.</p>
-            <h2>6. Speicherdauer</h2>
-            <p>Personenbezogene Daten werden nur so lange gespeichert, wie dies für den jeweiligen Zweck erforderlich ist oder gesetzliche Pflichten bestehen.</p>
-            <h2>7. Deine Rechte</h2>
-            <p>Du hast im Rahmen der gesetzlichen Voraussetzungen Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch.</p>
-            <h2>8. Beschwerderecht</h2>
-            <p>Du hast das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.</p>
-            <h2>9. Änderungen</h2>
-            <p>Diese Datenschutzerklärung kann angepasst werden, wenn sich Website, Dienste oder rechtliche Anforderungen ändern.</p>
+            <h2>1. Verantwortlicher</h2><p>Thomas Olesch – Copywriting<br />Thomas Olesch<br />Sorsumer Hauptstraße 64<br />31139 Hildesheim<br />Deutschland<br /><a href="mailto:ThomasOlesch.Copywriting@web.de">ThomasOlesch.Copywriting@web.de</a></p>
+            <h2>2. Hosting</h2><p>Diese Website wird über Vercel bereitgestellt. Beim Aufruf können technisch notwendige Daten wie IP-Adresse, Zeitpunkt, aufgerufene Seite, Browser- und Geräteinformationen verarbeitet werden.</p>
+            <h2>3. Webseite-Röntgen und E-Mail-Übertragung</h2><p>Wenn du das Formular absendest, verarbeiten wir deine URL, E-Mail-Adresse sowie deine freiwilligen Angaben, um deine Anfrage zu prüfen, den Befund zu erstellen und dich dazu zu kontaktieren. Die Übertragung wird technisch durch FormSubmit unterstützt.</p>
+            <h2>4. Calendly</h2><p>Der Link zum Kennenlerngespräch führt zu Calendly. Eine Verbindung entsteht erst, wenn du den Link aktiv anklickst.</p>
+            <h2>5. Deine Rechte</h2><p>Du hast im Rahmen der gesetzlichen Voraussetzungen Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch.</p>
             <p className="notice">Hinweis: Diese Datenschutzerklärung dient der transparenten Information und ist keine individuelle Rechtsberatung.</p>
           </>
         ) : (
           <>
-            <h2>Angaben gemäß § 5 DDG</h2>
-            <p>
-              <strong>Thomas Olesch – Copywriting</strong>
-              <br />
-              Thomas Olesch
-              <br />
-              Freiberuflicher Texter & Copywriter
-              <br />
-              Sorsumer Hauptstraße 64
-              <br />
-              31139 Hildesheim
-              <br />
-              Deutschland
-            </p>
-            <p>
-              <strong>Kontakt</strong>
-              <br />
-              <a href="mailto:ThomasOlesch.Copywriting@web.de">ThomasOlesch.Copywriting@web.de</a>
-            </p>
-            <h2>Haftung für Inhalte und Links</h2>
-            <p>Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Eine Gewähr für Richtigkeit, Vollständigkeit und Aktualität kann dennoch nicht übernommen werden.</p>
-            <h2>Urheberrecht</h2>
-            <p>Die auf dieser Website erstellten Inhalte und Werke unterliegen dem deutschen Urheberrecht.</p>
+            <h2>Angaben gemäß § 5 DDG</h2><p><strong>Thomas Olesch – Copywriting</strong><br />Thomas Olesch<br />Freiberuflicher Texter & Copywriter<br />Sorsumer Hauptstraße 64<br />31139 Hildesheim<br />Deutschland</p>
+            <p><strong>Kontakt</strong><br /><a href="mailto:ThomasOlesch.Copywriting@web.de">ThomasOlesch.Copywriting@web.de</a></p>
+            <h2>Haftung für Inhalte und Links</h2><p>Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Eine Gewähr für Richtigkeit, Vollständigkeit und Aktualität kann dennoch nicht übernommen werden.</p>
+            <h2>Urheberrecht</h2><p>Die auf dieser Website erstellten Inhalte und Werke unterliegen dem deutschen Urheberrecht.</p>
           </>
         )}
         <p>Stand: September 2026</p>
