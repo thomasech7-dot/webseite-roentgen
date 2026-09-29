@@ -55,15 +55,21 @@ function Section({ eye, title, intro, children, alt = false }: { eye: string; ti
   return <section className={alt ? 'alt' : ''}><div className="wrap"><p className="eye">{eye}</p><h2>{title}</h2>{intro && <p className="intro">{intro}</p>}{children}</div></section>;
 }
 
-function ScanHero() {
+function HeroVisual() {
   return (
-    <div className="scanHero" aria-label="Website-Röntgen Visual">
-      <div className="scanWindow">
-        <div className="scanTop"><span></span><span></span><span></span><small>analyse / startseite</small></div>
-        <div className="scanBody">
+    <div className="heroVisual" aria-label="Thomas Olesch Website-Röntgen Visual">
+      <div className="photoFrame">
+        <img src={thomasPhoto} alt="Thomas Olesch am Strand" />
+        <div className="photoGlow"></div>
+      </div>
+      <div className="laptopMock" aria-hidden="true">
+        <div className="scanTop"><span></span><span></span><span></span><small>website-röntgen / live-blick</small></div>
+        <div className="laptopScreen">
           <div className="scanLine"></div>
-          <div className="wirePanel"></div>
-          <div className="mockHero"><i></i><b></b><b></b><b></b><p></p><p></p><button></button></div>
+          <p className="screenKicker">ANALYSE</p>
+          <strong>Hero · Copy · SEO</strong>
+          <i></i><i></i><i></i>
+          <button>Analyse anfordern</button>
           <div className="scoreBadge"><ScanLine /> Conversion-Signal <strong>68</strong></div>
         </div>
       </div>
@@ -118,12 +124,12 @@ function Home() {
           <div className="heroIn">
             <div>
               <p className="eye">Wenn Besucher kommen, aber Anfragen ausbleiben</p>
-              <h1>Deine Website kann gut aussehen und trotzdem jeden Tag Anfragen verlieren.</h1>
+              <h1>Deine Website kann gut aussehen und trotzdem jeden Tag <em>Anfragen verlieren.</em></h1>
               <p className="lead">Ich prüfe, wo Besucher aussteigen, was sie nicht verstehen und warum Google deine Seite womöglich anders einordnet als deine Wunschkunden. Danach weißt du, welche drei Stellen du zuerst ändern solltest.</p>
               <a className="btn" href="#analyse">Kostenlose Analyse anfordern <ArrowDown /></a>
               <small>Kostenlos. Persönlich geprüft. Drei priorisierte Hebel.</small>
             </div>
-            <ScanHero />
+            <HeroVisual />
           </div>
         </section>
 
