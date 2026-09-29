@@ -8,6 +8,7 @@ import lukasPhoto from './assets/lukas-kazimierski.webp';
 const EMAIL = 'ThomasOlesch.Copywriting@web.de';
 const CALENDLY = 'https://calendly.com/thomasolesch-copywriting/kostenloses-kennenlerngespraech-30-minuten';
 const INSTAGRAM = 'https://www.instagram.com/thomas.olesch.copywriter/';
+const LINKEDIN = 'https://de.linkedin.com/in/thomas-olesch-a42627317';
 
 const diagnostics = [
   ['01', 'Conversion & Nutzerführung', 'Versteht ein neuer Besucher schnell, dass er hier mit seinem Problem richtig ist und welcher nächste Schritt für ihn sinnvoll ist?'],
@@ -18,7 +19,7 @@ const diagnostics = [
 const steps = [
   ['01', 'Du schickst mir deine Website.', 'URL, E-Mail und ein paar kurze Informationen reichen, damit ich weiß, worauf ich achten muss.'],
   ['02', 'Ich schaue dort hin, wo Anfragen verloren gehen können.', 'Hero, Positionierung, Copy, Nutzerführung, Conversion und Suchintention.'],
-  ['03', 'Du bekommst deine drei wichtigsten Hebel.', 'Priorisiert und verständlich. Damit du weißt, was zuerst geändert werden sollte und was danach Sinn ergibt.'],
+  ['03', 'Du bekommst deine drei wichtigsten Hebel.', 'Priorisiert und verständlich. Damit du weißt, was zuerst geändert werden sollte und welcher Hebel danach folgt.'],
 ];
 
 function Header() {
@@ -46,6 +47,7 @@ function Footer() {
         <a href="/impressum">Impressum</a>
         <a href="/datenschutz">Datenschutz</a>
         <a href={INSTAGRAM} target="_blank" rel="noreferrer">Instagram</a>
+        <a href={LINKEDIN} target="_blank" rel="noreferrer">LinkedIn</a>
       </nav>
     </footer>
   );
@@ -141,7 +143,7 @@ function Home() {
           </div>
         </Section>
 
-        <Section alt eye="Wo verliert deine Website potenzielle Kunden?" title="Ich zeige dir die Stellen, an denen deine Website gerade Potenzial liegen lässt." intro="Keine allgemeine Bewertung von schön oder nicht schön. Ich schaue darauf, was ein potenzieller Kunde versteht, fühlt und als Nächstes tut.">
+        <Section alt eye="Wo verliert deine Website potenzielle Kunden?" title="Ich zeige dir die Stellen, an denen deine Website gerade Potenzial liegen lässt." intro="Ich schaue darauf, was ein potenzieller Kunde versteht, was ihn zweifeln lässt und ob der nächste Schritt für ihn logisch wirkt.">
           <div className="grid3 diag">{diagnostics.map((x) => <article className="card" key={x[0]}><b>{x[0]}</b><h3>{x[1]}</h3><p>{x[2]}</p></article>)}</div>
         </Section>
 
@@ -157,7 +159,7 @@ function Home() {
         </Section>
 
         <Section eye="Wer deine Website röntgt" title="Thomas Olesch" intro="Conversion Copywriter">
-          <div className="profileCard"><img src={thomasPhoto} alt="Thomas Olesch" className="profileImg" /><div className="profileBody"><p>Ich schaue nicht zuerst darauf, ob ein Satz besonders clever klingt.</p><p>Mich interessiert, warum ein Mensch auf deiner Website landet und trotzdem nicht den nächsten Schritt macht.</p><p>Dafür verbinde ich Positionierung, Conversion Copy und Suchintention. Damit deine Website nicht einfach beschreibt, was du machst, sondern deinem Wunschkunden zeigt, warum das für sein Problem relevant ist.</p><a href={INSTAGRAM} target="_blank" rel="noreferrer">Instagram ansehen <ExternalLink /></a></div></div>
+          <div className="profileCard"><img src={thomasPhoto} alt="Thomas Olesch" className="profileImg" /><div className="profileBody"><p>Ich schaue nicht zuerst darauf, ob ein Satz besonders clever klingt.</p><p>Mich interessiert, warum ein Mensch auf deiner Website landet und trotzdem nicht den nächsten Schritt macht.</p><p>Dafür verbinde ich Positionierung, Conversion Copy und Suchintention. Damit deine Website nicht einfach beschreibt, was du machst, sondern deinem Wunschkunden zeigt, warum dein Angebot für seine Situation relevant ist.</p><div className="socialRow"><a href={INSTAGRAM} target="_blank" rel="noreferrer">Instagram <ExternalLink /></a><a href={LINKEDIN} target="_blank" rel="noreferrer">LinkedIn <ExternalLink /></a></div></div></div>
         </Section>
 
         <section><div className="wrap"><p className="eye">Und danach?</p><h2>Du bekommst zuerst Klarheit. Was du daraus machst, entscheidest du.</h2><p className="intro">Der Website-Röntgen ist kostenlos. Ich zeige dir deine drei wichtigsten Hebel und sage dir auch, was du selbst verändern kannst. Wenn wir dabei feststellen, dass du Unterstützung brauchst, können wir danach gemeinsam an der Umsetzung arbeiten – zum Beispiel an deiner Positionierung, deinen Website- oder Landingpage-Texten, SEO, E-Mail-Marketing oder der gesamten Conversion-Strecke. Erst kommt der Befund. Dann entscheiden wir, was überhaupt sinnvoll ist.</p></div></section>
