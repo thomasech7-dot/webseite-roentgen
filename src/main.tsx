@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { ArrowDown, ArrowRight, Check, ExternalLink, ScanLine } from 'lucide-react';
+import { ArrowDown, ArrowRight, Check, ExternalLink } from 'lucide-react';
 import './style.css';
-import thomasPhoto from './assets/thomas-beach.jpg';
-import thomasProfile from './assets/thomas-freesistant-profile.jpg';
+import thomasBeachLaptop from './assets/thomas-beach-laptop.jpg';
+import thomasProfile from './assets/thomas-portrait.jpg';
 import lukasPhoto from './assets/lukas-kazimierski.webp';
 
 const EMAIL = 'ThomasOlesch.Copywriting@web.de';
@@ -30,6 +30,12 @@ function Header() {
         <span className="brandMark">TO</span>
         <span className="brandCopy"><strong>Website-Röntgen</strong><small>Thomas Olesch · Conversion Copywriting</small></span>
       </a>
+      <nav className="headerNav" aria-label="Hauptnavigation">
+        <a href="/#problem">Vorteile</a>
+        <a href="/#ablauf">Ablauf</a>
+        <a href="/#kundenstimmen">Kundenstimmen</a>
+        <a href="/#ueber-mich">Über mich</a>
+      </nav>
       <a className="btn small" href="/#analyse">Kostenlose Analyse anfordern <ArrowRight /></a>
     </header>
   );
@@ -54,27 +60,15 @@ function Footer() {
   );
 }
 
-function Section({ eye, title, intro, children, alt = false }: { eye: string; title: string; intro?: string; children?: React.ReactNode; alt?: boolean }) {
-  return <section className={alt ? 'alt' : ''}><div className="wrap"><p className="eye">{eye}</p><h2>{title}</h2>{intro && <p className="intro">{intro}</p>}{children}</div></section>;
+function Section({ eye, title, intro, children, alt = false, id, className = '' }: { eye: string; title: string; intro?: string; children?: React.ReactNode; alt?: boolean; id?: string; className?: string }) {
+  return <section id={id} className={`${alt ? 'alt' : ''} ${className}`}><div className="wrap"><p className="eye">{eye}</p><h2>{title}</h2>{intro && <p className="intro">{intro}</p>}{children}</div></section>;
 }
 
 function HeroVisual() {
   return (
     <div className="heroVisual" aria-label="Thomas Olesch Website-Röntgen Visual">
       <div className="photoFrame">
-        <img src={thomasPhoto} alt="Thomas Olesch am Strand" />
-        <div className="photoGlow"></div>
-      </div>
-      <div className="laptopMock" aria-hidden="true">
-        <div className="scanTop"><span></span><span></span><span></span><small>website-röntgen / live-blick</small></div>
-        <div className="laptopScreen">
-          <div className="scanLine"></div>
-          <p className="screenKicker">ANALYSE</p>
-          <strong>Hero · Copy · SEO</strong>
-          <i></i><i></i><i></i>
-          <button>Analyse anfordern</button>
-          <div className="scoreBadge"><ScanLine /> Conversion-Signal <strong>68</strong></div>
-        </div>
+        <img src={thomasBeachLaptop} alt="Thomas Olesch am Strand mit seinem Laptop" />
       </div>
     </div>
   );
@@ -136,7 +130,7 @@ function Home() {
           </div>
         </section>
 
-        <Section eye="Deine Website ist selten das eigentliche Problem" title="Deine Kunden stehen morgens nicht auf und denken: „Ich brauche bessere Website-Texte.“" intro="Sie fragen sich, warum zu wenige passende Anfragen kommen, warum Besucher wieder verschwinden oder warum sie ihr Angebot im Gespräch immer wieder erklären müssen. Genau dort beginnt eine Website, die verkauft: bei dem Problem, das dein Kunde bereits spürt.">
+        <Section id="problem" className="problemSection" eye="Deine Website ist selten das eigentliche Problem" title="Deine Kunden stehen morgens nicht auf und denken: „Ich brauche bessere Website-Texte.“" intro="Sie fragen sich, warum zu wenige passende Anfragen kommen, warum Besucher wieder verschwinden oder warum sie ihr Angebot im Gespräch immer wieder erklären müssen. Genau dort beginnt eine Website, die verkauft: bei dem Problem, das dein Kunde bereits spürt.">
           <div className="grid3">
             <article className="card"><b>01</b><h3>„Warum kommen so wenige passende Anfragen?“</h3><p>Besucher sind vielleicht da. Aber sie spüren nicht schnell genug, warum dein Angebot für ihre Situation relevant ist.</p></article>
             <article className="card"><b>02</b><h3>„Warum schauen Leute und melden sich trotzdem nicht?“</h3><p>Interesse entsteht, aber der nächste Schritt wirkt nicht logisch, klar oder dringend genug.</p></article>
@@ -148,18 +142,18 @@ function Home() {
           <div className="grid3 diag">{diagnostics.map((x) => <article className="card" key={x[0]}><b>{x[0]}</b><h3>{x[1]}</h3><p>{x[2]}</p></article>)}</div>
         </Section>
 
-        <Section eye="So funktioniert das Röntgen" title="In drei Schritten weißt du, wo du ansetzen solltest.">
+        <Section id="ablauf" eye="So funktioniert das Röntgen" title="In drei Schritten weißt du, wo du ansetzen solltest.">
           <div className="grid3 steps">{steps.map((x) => <article key={x[0]}><b>{x[0]}</b><h3>{x[1]}</h3><p>{x[2]}</p></article>)}</div>
         </Section>
 
-        <Section alt eye="Was andere am Röntgen-Blick sehen" title="Vertrauen entsteht nicht durch große Versprechen, sondern durch konkrete Arbeit.">
+        <Section id="kundenstimmen" alt eye="Was andere am Röntgen-Blick sehen" title="Vertrauen entsteht nicht durch große Versprechen, sondern durch konkrete Arbeit.">
           <div className="proofGrid">
             <article className="quoteCard"><span className="quoteMark">“</span><h3>Claudia Kirsch</h3><p className="role">Unternehmensberatung</p><blockquote>„Die Landingpage sieht nach einem produktiven Schub aus, wie Sie den Röntgen-Blick beschreiben und werblich überzeugend präsentieren.“</blockquote><p className="quoteHint">Feedback nach dem Röntgen-Blick auf die Landingpage.</p></article>
             <article className="projectCard"><img src={lukasPhoto} alt="Lukas Kazimierski" /><div className="projectBody"><p className="projectEyebrow">Projekt-Einblick</p><h3>Lukas Kazimierski</h3><p className="role">Personal Trainer</p><p>Gute Leistung allein bringt noch keine Anfrage, wenn der Besucher nicht schnell versteht, warum sie gerade für ihn relevant ist. Im Mittelpunkt stand die Positionierung und die Frage, wie seine Leistung klarer kommuniziert wird.</p><a href="https://www.lukas-kazimierski.de" target="_blank" rel="noreferrer">Projekt ansehen <ExternalLink /></a></div></article>
           </div>
         </Section>
 
-        <Section eye="Wer deine Website röntgt" title="Thomas Olesch" intro="Conversion Copywriter">
+        <Section id="ueber-mich" eye="Wer deine Website röntgt" title="Thomas Olesch" intro="Conversion Copywriter">
           <div className="profileCard"><img src={thomasProfile} alt="Thomas Olesch" className="profileImg" /><div className="profileBody"><p>Ich schaue nicht zuerst darauf, ob ein Satz besonders clever klingt.</p><p>Mich interessiert, warum ein Mensch auf deiner Website landet und trotzdem nicht den nächsten Schritt macht.</p><p>Dafür verbinde ich Positionierung, Conversion Copy und Suchintention. Damit deine Website nicht einfach beschreibt, was du machst, sondern deinem Wunschkunden zeigt, warum dein Angebot für seine Situation relevant ist.</p><div className="socialRow"><a href={INSTAGRAM} target="_blank" rel="noreferrer">Instagram <ExternalLink /></a><a href={LINKEDIN} target="_blank" rel="noreferrer">LinkedIn <ExternalLink /></a></div></div></div>
         </Section>
 
