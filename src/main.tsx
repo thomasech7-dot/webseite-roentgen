@@ -5,6 +5,9 @@ import './style.css';
 import thomasBeachLaptop from './assets/thomas-beach-laptop.jpg';
 import thomasProfile from './assets/thomas-portrait.jpg';
 import lukasPhoto from './assets/lukas-kazimierski.webp';
+import stepSubmit from './assets/step-submit.webp';
+import stepAnalysis from './assets/step-analysis.webp';
+import stepPriorities from './assets/step-priorities.webp';
 
 const EMAIL = 'ThomasOlesch.Copywriting@web.de';
 const CALENDLY = 'https://calendly.com/thomasolesch-copywriting/kostenloses-kennenlerngespraech-30-minuten';
@@ -18,9 +21,9 @@ const diagnostics = [
 ];
 
 const steps = [
-  ['01', 'Du schickst mir deine Website.', 'URL, E-Mail und ein paar kurze Informationen reichen, damit ich weiß, worauf ich achten muss.'],
-  ['02', 'Ich schaue dort hin, wo Anfragen verloren gehen können.', 'Hero, Positionierung, Copy, Nutzerführung, Conversion und Suchintention.'],
-  ['03', 'Du bekommst deine drei wichtigsten Hebel.', 'Priorisiert und verständlich. Damit du weißt, was zuerst geändert werden sollte und welcher Hebel danach folgt.'],
+  ['01', 'Du schickst mir deine Website.', 'URL, E-Mail und ein paar kurze Informationen reichen, damit ich weiß, worauf ich achten muss.', stepSubmit, 'Abstrakte Website-Karte mit Link-Symbol und Sende-Pfeil'],
+  ['02', 'Ich schaue dort hin, wo Anfragen verloren gehen können.', 'Hero, Positionierung, Copy, Nutzerführung, Conversion und Suchintention.', stepAnalysis, 'Lupe scannt eine abstrakte Website-Struktur'],
+  ['03', 'Du bekommst deine drei wichtigsten Hebel.', 'Priorisiert und verständlich. Damit du weißt, was zuerst geändert werden sollte und welcher Hebel danach folgt.', stepPriorities, 'Drei priorisierte Empfehlungskarten mit Wegweiser'],
 ];
 
 function Header() {
@@ -143,7 +146,7 @@ function Home() {
         </Section>
 
         <Section id="ablauf" eye="So funktioniert das Röntgen" title="In drei Schritten weißt du, wo du ansetzen solltest.">
-          <div className="grid3 steps">{steps.map((x) => <article key={x[0]}><b>{x[0]}</b><h3>{x[1]}</h3><p>{x[2]}</p></article>)}</div>
+          <div className="grid3 steps">{steps.map((x) => <article key={x[0]}><img className="stepImage" src={x[3]} alt={x[4]} /><b>{x[0]}</b><h3>{x[1]}</h3><p>{x[2]}</p></article>)}</div>
         </Section>
 
         <Section id="kundenstimmen" alt eye="Was andere am Röntgen-Blick sehen" title="Vertrauen entsteht nicht durch große Versprechen, sondern durch konkrete Arbeit.">
