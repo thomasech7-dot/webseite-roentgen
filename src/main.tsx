@@ -8,6 +8,9 @@ import lukasPhoto from './assets/lukas-kazimierski.webp';
 import stepSubmit from './assets/step-submit.webp';
 import stepAnalysis from './assets/step-analysis.webp';
 import stepPriorities from './assets/step-priorities.webp';
+import diagConversion from './assets/diag-conversion.webp';
+import diagPositioning from './assets/diag-positioning.webp';
+import diagSearch from './assets/diag-search.webp';
 
 const EMAIL = 'ThomasOlesch.Copywriting@web.de';
 const CALENDLY = 'https://calendly.com/thomasolesch-copywriting/kostenloses-kennenlerngespraech-30-minuten';
@@ -15,9 +18,9 @@ const INSTAGRAM = 'https://www.instagram.com/thomas.olesch.copywriter/';
 const LINKEDIN = 'https://de.linkedin.com/in/thomas-olesch-a42627317';
 
 const diagnostics = [
-  ['01', 'Conversion & Nutzerführung', 'Versteht ein neuer Besucher schnell, dass er hier mit seinem Problem richtig ist und welcher nächste Schritt für ihn sinnvoll ist?'],
-  ['02', 'Copy & Positionierung', 'Erkennt sich dein Wunschkunde wieder oder muss er erst selbst herausfinden, warum dein Angebot für ihn relevant ist?'],
-  ['03', 'SEO & Suchintention', 'Passt das, wonach Menschen suchen, zu dem, was sie auf deiner Seite vorfinden, oder entsteht schon beim Einstieg ein Bruch?'],
+  ['01', 'Conversion & Nutzerführung', 'Versteht ein neuer Besucher schnell, dass er hier mit seinem Problem richtig ist und welcher nächste Schritt für ihn sinnvoll ist?', diagConversion, 'Abstrakter Besucherweg durch eine Website hin zum nächsten Schritt'],
+  ['02', 'Copy & Positionierung', 'Erkennt sich dein Wunschkunde wieder oder muss er erst selbst herausfinden, warum dein Angebot für ihn relevant ist?', diagPositioning, 'Eine klare Botschaft hebt sich aus mehreren abstrakten Textflächen hervor'],
+  ['03', 'SEO & Suchintention', 'Passt das, wonach Menschen suchen, zu dem, was sie auf deiner Seite vorfinden, oder entsteht schon beim Einstieg ein Bruch?', diagSearch, 'Lupe verbindet eine abstrakte Suchanfrage mit einer passenden Website'],
 ];
 
 const steps = [
@@ -142,7 +145,7 @@ function Home() {
         </Section>
 
         <Section alt eye="Wo verliert deine Website potenzielle Kunden?" title="Ich zeige dir die Stellen, an denen deine Website gerade Potenzial liegen lässt." intro="Ich schaue darauf, was ein potenzieller Kunde versteht, was ihn zweifeln lässt und ob der nächste Schritt für ihn logisch wirkt.">
-          <div className="grid3 diag">{diagnostics.map((x) => <article className="card" key={x[0]}><b>{x[0]}</b><h3>{x[1]}</h3><p>{x[2]}</p></article>)}</div>
+          <div className="grid3 diag">{diagnostics.map((x) => <article className="card" key={x[0]}><img className="diagImage" src={x[3]} alt={x[4]} /><b>{x[0]}</b><h3>{x[1]}</h3><p>{x[2]}</p></article>)}</div>
         </Section>
 
         <Section id="ablauf" eye="So funktioniert das Röntgen" title="In drei Schritten weißt du, wo du ansetzen solltest.">
