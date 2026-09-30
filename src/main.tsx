@@ -11,6 +11,9 @@ import stepPriorities from './assets/step-priorities.webp';
 import diagConversion from './assets/diag-conversion.webp';
 import diagPositioning from './assets/diag-positioning.webp';
 import diagSearch from './assets/diag-search.webp';
+import symptomEnquiries from './assets/symptom-enquiries.webp';
+import symptomVisitors from './assets/symptom-visitors.webp';
+import symptomExplaining from './assets/symptom-explaining.webp';
 
 const EMAIL = 'ThomasOlesch.Copywriting@web.de';
 const CALENDLY = 'https://calendly.com/thomasolesch-copywriting/kostenloses-kennenlerngespraech-30-minuten';
@@ -138,9 +141,9 @@ function Home() {
 
         <Section id="problem" className="problemSection" eye="Deine Website ist selten das eigentliche Problem" title="Deine Kunden stehen morgens nicht auf und denken: „Ich brauche bessere Website-Texte.“" intro="Sie fragen sich, warum zu wenige passende Anfragen kommen, warum Besucher wieder verschwinden oder warum sie ihr Angebot im Gespräch immer wieder erklären müssen. Genau dort beginnt eine Website, die verkauft: bei dem Problem, das dein Kunde bereits spürt.">
           <div className="grid3">
-            <article className="card"><b>01</b><h3>„Warum kommen so wenige passende Anfragen?“</h3><p>Besucher sind vielleicht da. Aber sie spüren nicht schnell genug, warum dein Angebot für ihre Situation relevant ist.</p></article>
-            <article className="card"><b>02</b><h3>„Warum schauen Leute und melden sich trotzdem nicht?“</h3><p>Interesse entsteht, aber der nächste Schritt wirkt nicht logisch, klar oder dringend genug.</p></article>
-            <article className="card"><b>03</b><h3>„Warum muss ich mein Angebot immer wieder erklären?“</h3><p>Dann trägt deine Website noch nicht genug Vorarbeit für Vertrauen, Orientierung und Entscheidung.</p></article>
+            <article className="card"><img className="problemImage" src={symptomEnquiries} alt="Besucher kommen auf eine Website, doch die Anfrage-Ablage bleibt leer" /><b>01</b><h3>„Warum kommen so wenige passende Anfragen?“</h3><p>Besucher sind vielleicht da. Aber sie spüren nicht schnell genug, warum dein Angebot für ihre Situation relevant ist.</p></article>
+            <article className="card"><img className="problemImage" src={symptomVisitors} alt="Ein Besucher sieht sich eine Website an, ohne den Kontakt aufzunehmen" /><b>02</b><h3>„Warum schauen Leute und melden sich trotzdem nicht?“</h3><p>Interesse entsteht, aber der nächste Schritt wirkt nicht logisch, klar oder dringend genug.</p></article>
+            <article className="card"><img className="problemImage" src={symptomExplaining} alt="Ein Unternehmer erklärt sein Angebot wiederholt verschiedenen Menschen" /><b>03</b><h3>„Warum muss ich mein Angebot immer wieder erklären?“</h3><p>Dann trägt deine Website noch nicht genug Vorarbeit für Vertrauen, Orientierung und Entscheidung.</p></article>
           </div>
         </Section>
 
