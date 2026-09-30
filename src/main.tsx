@@ -126,10 +126,10 @@ function Home() {
         <section className="hero">
           <div className="heroIn">
             <div>
-              <p className="eye">Wenn Besucher kommen, aber Anfragen ausbleiben</p>
+              <p className="eye">Zu wenige passende Anfragen?</p>
               <h1>Deine Website kann gut aussehen und trotzdem jeden Tag <em>Anfragen verlieren.</em></h1>
-              <p className="lead">Ich prüfe, wo Besucher aussteigen, was sie nicht verstehen und warum Google deine Seite womöglich anders einordnet als deine Wunschkunden. Danach weißt du, welche drei Stellen du zuerst ändern solltest.</p>
-              <a className="btn" href="#analyse">Kostenlose Analyse anfordern <ArrowDown /></a>
+              <p className="lead">Wenn Besucher nicht erkennen, warum dein Angebot für ihre Situation relevant ist oder was sie als Nächstes tun sollen, gehen sie womöglich wieder, ohne sich zu melden. Im kostenlosen Website-Röntgen prüfe ich Conversion und Nutzerführung, Copy und Positionierung sowie SEO und Suchintention. Du bekommst drei priorisierte Hebel.</p>
+              <a className="btn" href="#analyse">Kostenloses Website-Röntgen anfordern <ArrowDown /></a>
               <small>Kostenlos. Persönlich geprüft. Drei priorisierte Hebel.</small>
             </div>
             <HeroVisual />
