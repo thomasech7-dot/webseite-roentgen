@@ -58,7 +58,6 @@ function Footer() {
       <div>
         <strong>Thomas Olesch – Copywriting</strong><br />
         Conversion Copywriter<br />
-        <a href={`mailto:${EMAIL}`}>{EMAIL}</a><br />
         <span className="copyright">© 2026 Thomas Olesch</span>
       </div>
       <nav>
