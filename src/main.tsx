@@ -142,7 +142,7 @@ function Home() {
           </div>
         </Section>
 
-        <Section alt eye="Wo verliert deine Website potenzielle Kunden?" title="Du erkennst, wo Besucher abspringen – und was ihnen zur Anfrage fehlt." intro="Du siehst, was potenzielle Kunden auf deiner Website verstehen, wo Zweifel entstehen und ob der nächste Schritt für sie logisch ist.">
+        <Section alt eye="Zu wenige passende Anfragen?" title="Deine Website wird besucht. Doch passende Anfragen bleiben aus." intro="Vielleicht erklärst du dein Angebot im Gespräch immer wieder, weil auf deiner Website nicht schnell klar wird, für wen es gedacht ist und warum es zur Situation deiner Zielgruppe passt. Du bekommst eine Einschätzung zu drei möglichen Hürden: Conversion & Nutzerführung, Copy & Positionierung sowie SEO & Suchintention.">
           <div className="grid3 diag">{diagnostics.map((x) => <article className="card" key={x[0]}><img className="diagImage" src={x[3]} alt={x[4]} /><b>{x[0]}</b><h3>{x[1]}</h3><p>{x[2]}</p></article>)}</div>
         </Section>
 
