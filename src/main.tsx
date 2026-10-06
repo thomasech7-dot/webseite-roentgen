@@ -30,7 +30,7 @@ const diagnostics = [
 
 const steps = [
   ['01', 'Du schickst mir deine Website.', 'URL, E-Mail und ein paar kurze Informationen reichen, damit ich weiß, worauf ich achten muss.', stepSubmit, 'Abstrakte Website-Karte mit Link-Symbol und Sende-Pfeil'],
-  ['02', 'Ich schaue dort hin, wo Anfragen verloren gehen können.', 'Hero, Positionierung, Copy, Nutzerführung, Conversion und Suchintention.', stepAnalysis, 'Lupe scannt eine abstrakte Website-Struktur'],
+  ['02', 'Du erfährst, wo Anfragen verloren gehen können.', 'Dabei geht es um deine Hero, Positionierung, Texte, Nutzerführung, Conversion und Suchintention.', stepAnalysis, 'Lupe scannt eine abstrakte Website-Struktur'],
   ['03', 'Du bekommst deine drei wichtigsten Hebel.', 'Priorisiert und verständlich. Damit du weißt, was zuerst geändert werden sollte und welcher Hebel danach folgt.', stepPriorities, 'Drei priorisierte Empfehlungskarten mit Wegweiser'],
 ];
 
@@ -119,13 +119,20 @@ function Home() {
             <div>
               <p className="eye">Zu wenige passende Anfragen?</p>
               <h1>Deine Website kann gut aussehen und trotzdem jeden Tag <em>Anfragen verlieren.</em></h1>
-              <p className="lead">Wenn Besucher nicht erkennen, warum dein Angebot für ihre Situation relevant ist oder was sie als Nächstes tun sollen, gehen sie womöglich wieder, ohne sich zu melden. Im kostenlosen Website-Röntgen prüfe ich Conversion und Nutzerführung, Copy und Positionierung sowie SEO und Suchintention. Du bekommst drei priorisierte Hebel.</p>
+              <p className="lead">Wenn Besucher nicht erkennen, warum dein Angebot für ihre Situation relevant ist oder was sie als Nächstes tun sollen, gehen sie womöglich wieder, ohne sich zu melden. Beim kostenlosen Website-Röntgen erkennst du, ob es an der Nutzerführung, deinen Texten oder der Suchintention liegt. Du erhältst drei priorisierte Hebel.</p>
               <a className="btn" href="#analyse">Kostenloses Website-Röntgen anfordern <ArrowDown /></a>
               <small>Kostenlos. Persönlich geprüft. Drei priorisierte Hebel.</small>
             </div>
             <HeroVisual />
           </div>
         </section>
+
+<Section id="kundenstimmen" alt eye="Was andere am Röntgen-Blick sehen" title="Zu wenige passende Anfragen, obwohl Menschen deine Website besuchen? Hier siehst du, worauf ich beim Röntgen schaue.">
+          <div className="proofGrid">
+            <article className="quoteCard"><span className="quoteMark">“</span><h3>Claudia Kirsch</h3><p className="role">Unternehmensberatung</p><blockquote><p>„Ich bin wirklich beeindruckt, wie individuell Sie sich in meine unternehmerischen Ziele und mein Geschäftsmodell hineingedacht haben.</p><p>Ihre Anregungen zur Optimierung meiner Webseite sind konkret und nachvollziehbar. Sie haben mich überzeugt, wie wichtig die Berücksichtigung der Userperspektive und eine klare SEO-Struktur für die Sichtbarkeit und mehr Anfragen über die Homepage sind. Vielen Dank!“</p></blockquote></article>
+            <article className="projectCard"><img src={lukasPhoto} alt="Lukas Kazimierski" /><div className="projectBody"><p className="projectEyebrow">Projekt-Einblick</p><h3>Lukas Kazimierski</h3><p className="role">Personal Trainer</p><p>Gute Leistung allein bringt noch keine Anfrage, wenn der Besucher nicht schnell versteht, warum sie gerade für ihn relevant ist. Im Mittelpunkt stand die Positionierung und die Frage, wie seine Leistung klarer kommuniziert wird.</p><a href="https://www.lukas-kazimierski.de" target="_blank" rel="noreferrer">Projekt ansehen <ExternalLink /></a></div></article>
+          </div>
+        </Section>
 
         <Section id="problem" className="problemSection" eye="Deine Website ist selten das eigentliche Problem" title="Besucher springen ab, wenn dein Angebot ihr Problem nicht klar trifft." intro="Sie kommen nicht als neutrale Leser, sondern mit Fragen, Druck und Zweifeln. Wenn deine Seite diesen Urschmerz nicht aufgreift, bleibt dein Angebot unscharf: Bin ich hier richtig? Versteht dieser Anbieter meine Situation? Führt mich der nächste Schritt wirklich weiter? Dann behandelst du nur Symptome - mehr Traffic, mehr Content, mehr Erklärungen - obwohl der Bruch in Relevanz, Orientierung und dem Weg zur Anfrage entsteht.">
           <div className="grid3">
@@ -135,7 +142,7 @@ function Home() {
           </div>
         </Section>
 
-        <Section alt eye="Wo verliert deine Website potenzielle Kunden?" title="Ich zeige dir die Stellen, an denen deine Website gerade Potenzial liegen lässt." intro="Ich schaue darauf, was ein potenzieller Kunde versteht, was ihn zweifeln lässt und ob der nächste Schritt für ihn logisch wirkt.">
+        <Section alt eye="Wo verliert deine Website potenzielle Kunden?" title="Du erkennst, wo Besucher abspringen – und was ihnen zur Anfrage fehlt." intro="Du siehst, was potenzielle Kunden auf deiner Website verstehen, wo Zweifel entstehen und ob der nächste Schritt für sie logisch ist.">
           <div className="grid3 diag">{diagnostics.map((x) => <article className="card" key={x[0]}><img className="diagImage" src={x[3]} alt={x[4]} /><b>{x[0]}</b><h3>{x[1]}</h3><p>{x[2]}</p></article>)}</div>
         </Section>
 
@@ -143,15 +150,8 @@ function Home() {
           <div className="grid3 steps">{steps.map((x) => <article key={x[0]}><img className="stepImage" src={x[3]} alt={x[4]} /><b>{x[0]}</b><h3>{x[1]}</h3><p>{x[2]}</p></article>)}</div>
         </Section>
 
-        <Section id="kundenstimmen" alt eye="Was andere am Röntgen-Blick sehen" title="Zu wenige passende Anfragen, obwohl Menschen deine Website besuchen? Hier siehst du, worauf ich beim Röntgen schaue.">
-          <div className="proofGrid">
-            <article className="quoteCard"><span className="quoteMark">“</span><h3>Claudia Kirsch</h3><p className="role">Unternehmensberatung</p><blockquote><p>„Ich bin wirklich beeindruckt, wie individuell Sie sich in meine unternehmerischen Ziele und mein Geschäftsmodell hineingedacht haben.</p><p>Ihre Anregungen zur Optimierung meiner Webseite sind konkret und nachvollziehbar. Sie haben mich überzeugt, wie wichtig die Berücksichtigung der Userperspektive und eine klare SEO-Struktur für die Sichtbarkeit und mehr Anfragen über die Homepage sind. Vielen Dank!“</p></blockquote></article>
-            <article className="projectCard"><img src={lukasPhoto} alt="Lukas Kazimierski" /><div className="projectBody"><p className="projectEyebrow">Projekt-Einblick</p><h3>Lukas Kazimierski</h3><p className="role">Personal Trainer</p><p>Gute Leistung allein bringt noch keine Anfrage, wenn der Besucher nicht schnell versteht, warum sie gerade für ihn relevant ist. Im Mittelpunkt stand die Positionierung und die Frage, wie seine Leistung klarer kommuniziert wird.</p><a href="https://www.lukas-kazimierski.de" target="_blank" rel="noreferrer">Projekt ansehen <ExternalLink /></a></div></article>
-          </div>
-        </Section>
-
-        <Section id="ueber-mich" eye="Wer deine Website röntgt" title="Thomas Olesch" intro="Conversion Copywriter">
-          <div className="profileCard"><img src={thomasProfile} alt="Thomas Olesch" className="profileImg" /><div className="profileBody"><p>Du bekommst zu wenige passende Anfragen, obwohl Menschen deine Website besuchen. Im Gespräch erklärst du dein Angebot oft noch einmal von vorn, weil auf der Seite nicht klar wird, warum es zum Problem deines Gegenübers passt.</p><p>Ich prüfe, wo dieser Bruch entsteht: bei deiner Positionierung, in deinen Texten oder zwischen der Google-Suche und dem ersten Eindruck auf deiner Website. Als Conversion Copywriter helfe ich dir, dein Angebot so zu erklären, dass Interessenten erkennen, ob es zu ihrer Situation passt.</p><div className="credentials" aria-label="Ausbildung und Copywriting-Community"><a className="credential" href="https://www.freedom-writer.de/" target="_blank" rel="noreferrer"><img className="credentialLogo" src={freedomWriterLogo} alt="Freedom Writer Academy Logo" /><span><strong>Freedom Writer Academy</strong><small>Ausgebildet bei Philipp Follmer</small></span><ExternalLink /></a><a className="credential" href="https://www.the-copy-club.com/" target="_blank" rel="noreferrer"><img className="credentialLogo" src={copyClubLogo} alt="The Copy Club Logo" /><span><strong>The Copy Club</strong><small>Aktives Community-Mitglied · Markus Bocionek</small></span><ExternalLink /></a></div></div></div>
+                <Section id="ueber-mich" eye="Wer deine Website röntgt" title="Thomas Olesch" intro="Conversion Copywriter">
+          <div className="profileCard"><img src={thomasProfile} alt="Thomas Olesch" className="profileImg" /><div className="profileBody"><p>Du bekommst zu wenige passende Anfragen, obwohl Menschen deine Website besuchen. Im Gespräch erklärst du dein Angebot oft noch einmal von vorn, weil auf der Seite nicht klar wird, warum es zum Problem deines Gegenübers passt.</p><p>Wenn du zu wenige passende Anfragen bekommst, obwohl Menschen deine Website besuchen, bleibt eine entscheidende Frage: Erkennen sie schnell genug, warum dein Angebot zu ihrer Situation passt?</p><p>Beim Website-Röntgen bekommst du eine persönliche Prüfung deiner Positionierung, deiner Texte und des Wegs von der Google-Suche auf deine Website. Danach kennst du die drei Hebel, bei denen du zuerst ansetzen solltest.</p><div className="credentials" aria-label="Ausbildung und Copywriting-Community"><a className="credential" href="https://www.freedom-writer.de/" target="_blank" rel="noreferrer"><img className="credentialLogo" src={freedomWriterLogo} alt="Freedom Writer Academy Logo" /><span><strong>Freedom Writer Academy</strong><small>Ausgebildet bei Philipp Follmer</small></span><ExternalLink /></a><a className="credential" href="https://www.the-copy-club.com/" target="_blank" rel="noreferrer"><img className="credentialLogo" src={copyClubLogo} alt="The Copy Club Logo" /><span><strong>The Copy Club</strong><small>Aktives Community-Mitglied · Markus Bruzionek</small></span><ExternalLink /></a></div></div></div>
         </Section>
 
         <section><div className="wrap"><p className="eye">Und danach?</p><h2>Du bekommst zuerst Klarheit. Was du daraus machst, entscheidest du.</h2><p className="intro">Der Website-Röntgen ist kostenlos. Ich zeige dir deine drei wichtigsten Hebel und sage dir auch, was du selbst verändern kannst. Wenn wir dabei feststellen, dass du Unterstützung brauchst, können wir danach gemeinsam an der Umsetzung arbeiten – zum Beispiel an deiner Positionierung, deinen Website- oder Landingpage-Texten, SEO, E-Mail-Marketing oder der gesamten Conversion-Strecke. Erst kommt der Befund. Dann entscheiden wir, was überhaupt sinnvoll ist.</p></div></section>
