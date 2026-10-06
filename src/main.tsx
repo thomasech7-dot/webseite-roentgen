@@ -93,7 +93,7 @@ function LeadForm() {
       <input type="hidden" name="_captcha" value="false" />
       <input type="hidden" name="_next" value="https://webseite-roentgen.vercel.app/danke" />
       <div className="cols">
-        <label>Website *<input name="website" type="url" required placeholder="https://deine-website.de" /></label>
+        <label>Website *<input name="website" type="text" inputMode="url" required placeholder="www.deine-website.de oder deine-website.de" /></label>
         <label>E-Mail *<input name="email" type="email" required placeholder="du@unternehmen.de" /></label>
         <label>Name *<input name="name" autoComplete="name" required /></label>
         <label>Was soll deine Website vor allem erreichen? *<select name="ziel" required defaultValue=""><option value="" disabled>Bitte wählen</option><option>Mehr Anfragen</option><option>Mehr Termine</option><option>Mehr Verkäufe</option><option>Mehr Sichtbarkeit</option><option>Mehr Vertrauen</option></select></label>
