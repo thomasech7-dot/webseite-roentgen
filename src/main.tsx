@@ -18,7 +18,7 @@ import symptomVisitors from './assets/symptom-visitors.webp';
 import symptomExplaining from './assets/symptom-explaining.webp';
 
 const EMAIL = 'ThomasOlesch.Copywriting@web.de';
-const CALENDLY = 'https://calendly.com/thomasolesch-copywriting/kostenloses-kennenlerngespraech-30-minuten';
+const CALENDLY = 'https://calendly.com/thomasolesch-copywriting/kostenloses-kennenlerngesprach-30-minuten';
 const INSTAGRAM = 'https://www.instagram.com/thomas.olesch.copywriter/';
 const LINKEDIN = 'https://de.linkedin.com/in/thomas-olesch-a42627317';
 
@@ -156,7 +156,7 @@ function Home() {
 
         <section id="analyse" className="alt"><div className="wrap formGrid"><div><p className="eye">Dein kostenloses Website-Röntgen</p><h2>Schick mir die Seite, bei der du gerade nicht verstehst, warum zu wenig zurückkommt.</h2><p className="intro">Du gibst mir kurz Kontext. Ich schaue mir deine Seite persönlich an und schicke dir anschließend meine wichtigsten Befunde.</p><div className="checks"><p><Check /> Persönlich von Thomas geprüft</p><p><Check /> Drei klare, priorisierte Hebel</p><p><Check /> Kein automatischer Standard-Output</p></div></div><LeadForm /></div></section>
 
-        <section><div className="wrap talk"><div><p className="eye">Lieber im Gespräch?</p><h2>Du willst es lieber direkt besprechen?</h2><p className="intro">Wenn du deine Website und deine aktuelle Situation lieber direkt besprechen möchtest, kannst du dir ein kostenloses 30-minütiges Kennenlerngespräch buchen.</p></div><a className="btn outline" target="_blank" rel="noreferrer" href={CALENDLY}>Kostenloses Erstgespräch <ExternalLink /></a></div></section>
+        <section><div className="wrap talk"><div><p className="eye">Lieber im Gespräch?</p><h2>Du willst es lieber direkt besprechen?</h2><p className="intro">Wenn du deine Website und deine aktuelle Situation lieber direkt besprechen möchtest, kannst du dir ein kostenloses 30-minütiges Kennenlerngespräch buchen.</p><a className="textLink" target="_blank" rel="noreferrer" href={CALENDLY}>{CALENDLY}</a></div><a className="btn outline" target="_blank" rel="noreferrer" href={CALENDLY}>Kostenloses Erstgespräch <ExternalLink /></a></div></section>
       </main><Footer />
     </>
   );
