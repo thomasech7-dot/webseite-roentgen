@@ -95,11 +95,13 @@ function LeadForm() {
       <div className="cols">
         <label>Website *<input name="website" type="url" required placeholder="https://deine-website.de" /></label>
         <label>E-Mail *<input name="email" type="email" required placeholder="du@unternehmen.de" /></label>
-        <label>Name<input name="name" autoComplete="name" /></label>
+        <label>Name *<input name="name" autoComplete="name" required /></label>
         <label>Was soll deine Website vor allem erreichen? *<select name="ziel" required defaultValue=""><option value="" disabled>Bitte wählen</option><option>Mehr Anfragen</option><option>Mehr Termine</option><option>Mehr Verkäufe</option><option>Mehr Sichtbarkeit</option><option>Mehr Vertrauen</option></select></label>
       </div>
-      <label>Wen möchtest du erreichen? *<textarea name="zielgruppe" required /></label>
-      <label>Wonach sollen deine Wunschkunden bei Google suchen?<input name="suchanfrage" /></label>
+      <label>Was bietest du an? *<textarea name="angebot" required placeholder="Kurz und konkret: Angebot, Leistung oder Produkt." /></label>
+      <label>Für wen ist dein Angebot gedacht? *<textarea name="zielgruppe" required placeholder="Welche Menschen oder Unternehmen sollen sich angesprochen fühlen?" /></label>
+      <label>Was passiert aktuell zu wenig? *<select name="aktuelles_problem" required defaultValue=""><option value="" disabled>Bitte wählen</option><option>Zu wenige passende Anfragen</option><option>Besucher melden sich nicht</option><option>Mein Angebot wird nicht verstanden</option><option>Google bringt nicht die richtigen Menschen</option><option>Ich weiß es nicht genau</option></select></label>
+      <label>Wonach würden deine Kunden suchen, wenn sie dein Angebot brauchen?<input name="suchanfrage" placeholder="z. B. Steuerberater für GmbH, Personal Trainer Hildesheim, Landingpage erstellen lassen" /></label>
       <label>Was nervt dich aktuell am meisten an deiner Website?<textarea name="problem" /></label>
       <p className="privacy">Mit dem Absenden werden deine Angaben zur Bearbeitung deiner Anfrage übertragen. Details findest du in der <a href="/datenschutz">Datenschutzerklärung</a>.</p>
       <button className="btn submit">Kostenlosen Röntgen-Check anfordern <ArrowRight /></button>
