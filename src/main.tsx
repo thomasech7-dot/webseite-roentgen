@@ -92,10 +92,12 @@ function LeadForm() {
     setStatus('sending');
     try {
       const f = new FormData(e.currentTarget);
-      f.append('_subject', `Webseite-Röntgen Anfrage von ${f.get('website')}`);
-      f.append('_template', 'table');
-      f.append('_captcha', 'false');
-      const r = await fetch(`https://formsubmit.co/ajax/${EMAIL}`, { method: 'POST', body: f, headers: { Accept: 'application/json' } });
+      const payload = Object.fromEntries(f.entries());
+      const r = await fetch('/api/submit-roentgen', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
+      });
       if (!r.ok) throw new Error('send failed');
       e.currentTarget.reset();
       setStatus('success');
