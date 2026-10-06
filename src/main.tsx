@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { ArrowDown, ArrowRight, Check, ExternalLink } from 'lucide-react';
 import './style.css';
@@ -86,28 +86,12 @@ function HeroVisual() {
 }
 
 function LeadForm() {
-  const [status, setStatus] = useState('idle');
-  async function submit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setStatus('sending');
-    try {
-      const f = new FormData(e.currentTarget);
-      const payload = Object.fromEntries(f.entries());
-      const r = await fetch('/api/submit-roentgen', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(payload),
-      });
-      if (!r.ok) throw new Error('send failed');
-      e.currentTarget.reset();
-      setStatus('success');
-    } catch {
-      setStatus('error');
-    }
-  }
-
   return (
-    <form onSubmit={submit}>
+    <form action={`https://formsubmit.co/${EMAIL}`} method="POST">
+      <input type="hidden" name="_subject" value="Neue Website-Röntgen Anfrage" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="https://webseite-roentgen.vercel.app/danke" />
       <div className="cols">
         <label>Website *<input name="website" type="url" required placeholder="https://deine-website.de" /></label>
         <label>E-Mail *<input name="email" type="email" required placeholder="du@unternehmen.de" /></label>
@@ -118,9 +102,7 @@ function LeadForm() {
       <label>Wonach sollen deine Wunschkunden bei Google suchen?<input name="suchanfrage" /></label>
       <label>Was nervt dich aktuell am meisten an deiner Website?<textarea name="problem" /></label>
       <p className="privacy">Mit dem Absenden werden deine Angaben zur Bearbeitung deiner Anfrage übertragen. Details findest du in der <a href="/datenschutz">Datenschutzerklärung</a>.</p>
-      <button className="btn submit" disabled={status === 'sending'}>{status === 'sending' ? 'Wird gesendet …' : 'Kostenlosen Röntgen-Check anfordern'} <ArrowRight /></button>
-      {status === 'success' && <p className="success">Danke! Deine Anfrage ist angekommen. Ich melde mich per E-Mail.</p>}
-      {status === 'error' && <p className="error">Das hat leider nicht geklappt. Bitte versuche es erneut oder schreib direkt per E-Mail.</p>}
+      <button className="btn submit">Kostenlosen Röntgen-Check anfordern <ArrowRight /></button>
     </form>
   );
 }
@@ -186,5 +168,27 @@ function Legal({ privacy = false }: { privacy?: boolean }) {
   );
 }
 
+
+function Thanks() {
+  return (
+    <>
+      <Header />
+      <main>
+        <section className="hero thanksHero">
+          <div className="heroIn single">
+            <div>
+              <p className="eye">Anfrage angekommen</p>
+              <h1>Danke. Ich schaue mir deine Website persönlich an.</h1>
+              <p className="lead">Deine Angaben wurden übertragen. Wenn alles passt, melde ich mich per E-Mail mit den nächsten Schritten zu deinem Website-Röntgen.</p>
+              <a className="btn" href="/">Zurück zur Startseite <ArrowRight /></a>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
+}
+
 const path = location.pathname;
-createRoot(document.getElementById('root')!).render(path === '/impressum' ? <Legal /> : path === '/datenschutz' ? <Legal privacy /> : <Home />);
+createRoot(document.getElementById('root')!).render(path === '/impressum' ? <Legal /> : path === '/datenschutz' ? <Legal privacy /> : path === '/danke' ? <Thanks /> : <Home />);
