@@ -2,6 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { ArrowDown, ArrowRight, Check, ExternalLink } from 'lucide-react';
 import './style.css';
+import thomasLogo from './assets/thomas-logo-to-gold.svg';
 import thomasBeachLaptop from './assets/thomas-beach-laptop.jpg';
 import thomasProfile from './assets/thomas-portrait.jpg';
 import freedomWriterLogo from './assets/freedom-writer-academy-logo.jpeg';
@@ -38,8 +39,8 @@ function Header() {
   return (
     <header>
       <a className="brand" href="/">
-        <span className="brandMark">TO</span>
-        <span className="brandCopy"><strong>Website-Röntgen</strong><small>Thomas Olesch · Conversion Copywriting</small></span>
+        <img className="brandLogo" src={thomasLogo} alt="" />
+        <span className="brandCopy"><strong>Website-Röntgen</strong><small>Thomas Olesch · Copywriting & Webdesign</small></span>
       </a>
       <nav className="headerNav" aria-label="Hauptnavigation">
         <a href="/#problem">Vorteile</a>
