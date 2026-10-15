@@ -1,5 +1,5 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+import { createRoot, hydrateRoot } from 'react-dom/client';
 import { ArrowDown, ArrowRight, Check, ExternalLink } from 'lucide-react';
 import './style.css';
 import thomasLogo from './assets/thomas-logo-to-gold.svg';
@@ -39,7 +39,7 @@ function Header() {
   return (
     <header>
       <a className="brand" href="/">
-        <img className="brandLogo" src={thomasLogo} alt="" />
+        <img className="brandLogo" src={thomasLogo} alt="" decoding="async" width="512" height="512" />
         <span className="brandCopy"><strong>Website-Röntgen</strong><small>Thomas Olesch · Copywriting & Webdesign</small></span>
       </a>
       <nav className="headerNav" aria-label="Hauptnavigation">
@@ -79,7 +79,7 @@ function HeroVisual() {
   return (
     <div className="heroVisual" aria-label="Thomas Olesch Website-Röntgen Visual">
       <div className="photoFrame">
-        <img src={thomasBeachLaptop} alt="Thomas Olesch am Strand mit seinem Laptop" />
+        <img src={thomasBeachLaptop} alt="Thomas Olesch am Strand mit seinem Laptop" width="1536" height="864" fetchPriority="high" decoding="async" />
       </div>
     </div>
   );
@@ -130,28 +130,28 @@ function Home() {
 <Section id="kundenstimmen" alt eye="Was andere am Röntgen-Blick sehen" title="Zu wenige passende Anfragen, obwohl Menschen deine Website besuchen? Hier siehst du, worauf ich beim Röntgen schaue.">
           <div className="proofGrid">
             <article className="quoteCard"><span className="quoteMark">“</span><h3>Claudia Kirsch</h3><p className="role">Unternehmensberatung</p><blockquote><p>„Ich bin wirklich beeindruckt, wie individuell Sie sich in meine unternehmerischen Ziele und mein Geschäftsmodell hineingedacht haben.</p><p>Ihre Anregungen zur Optimierung meiner Webseite sind konkret und nachvollziehbar. Sie haben mich überzeugt, wie wichtig die Berücksichtigung der Userperspektive und eine klare SEO-Struktur für die Sichtbarkeit und mehr Anfragen über die Homepage sind. Vielen Dank!“</p></blockquote></article>
-            <article className="projectCard"><img src={lukasPhoto} alt="Lukas Kazimierski" /><div className="projectBody"><p className="projectEyebrow">Projekt-Einblick</p><h3>Lukas Kazimierski</h3><p className="role">Personal Trainer</p><p>Gute Leistung allein bringt noch keine Anfrage, wenn der Besucher nicht schnell versteht, warum sie gerade für ihn relevant ist. Im Mittelpunkt stand die Positionierung und die Frage, wie seine Leistung klarer kommuniziert wird.</p><a href="https://www.lukas-kazimierski.de" target="_blank" rel="noreferrer">Projekt ansehen <ExternalLink /></a></div></article>
+            <article className="projectCard"><img src={lukasPhoto} alt="Lukas Kazimierski" loading="lazy" decoding="async" width="1000" height="1198" /><div className="projectBody"><p className="projectEyebrow">Projekt-Einblick</p><h3>Lukas Kazimierski</h3><p className="role">Personal Trainer</p><p>Gute Leistung allein bringt noch keine Anfrage, wenn der Besucher nicht schnell versteht, warum sie gerade für ihn relevant ist. Im Mittelpunkt stand die Positionierung und die Frage, wie seine Leistung klarer kommuniziert wird.</p><a href="https://www.lukas-kazimierski.de" target="_blank" rel="noreferrer">Projekt ansehen <ExternalLink /></a></div></article>
           </div>
         </Section>
 
         <Section id="problem" className="problemSection" eye="Deine Website ist selten das eigentliche Problem" title="Besucher springen ab, wenn dein Angebot ihr Problem nicht klar trifft." intro="Sie kommen nicht als neutrale Leser, sondern mit Fragen, Druck und Zweifeln. Wenn deine Seite diesen Urschmerz nicht aufgreift, bleibt dein Angebot unscharf: Bin ich hier richtig? Versteht dieser Anbieter meine Situation? Führt mich der nächste Schritt wirklich weiter? Dann behandelst du nur Symptome - mehr Traffic, mehr Content, mehr Erklärungen - obwohl der Bruch in Relevanz, Orientierung und dem Weg zur Anfrage entsteht.">
           <div className="grid3">
-            <article className="card"><img className="problemImage" src={symptomEnquiries} alt="Besucher kommen auf eine Website, doch die Anfrage-Ablage bleibt leer" /><b>01</b><h3>„Bin ich hier überhaupt richtig?“</h3><p>Wenn Besucher ihr konkretes Problem nicht wiedererkennen, bleibt dein Angebot für sie allgemein. Sie lesen weiter, aber innerlich sind sie noch nicht bei dir.</p></article>
-            <article className="card"><img className="problemImage" src={symptomVisitors} alt="Ein Besucher sieht sich eine Website an, ohne den Kontakt aufzunehmen" /><b>02</b><h3>„Was bringt mir das in meiner Situation?“</h3><p>Viele Seiten erklären Leistungen, Methoden oder Abläufe. Der Besucher sucht aber Orientierung: Was ändert sich für ihn, wenn er den nächsten Schritt macht?</p></article>
-            <article className="card"><img className="problemImage" src={symptomExplaining} alt="Ein Unternehmer erklärt sein Angebot wiederholt verschiedenen Menschen" /><b>03</b><h3>„Warum sollte ich jetzt handeln?“</h3><p>Wenn Vertrauen, Klarheit oder Richtung fehlen, wirkt der CTA wie ein Sprung. Dann wird verglichen, vertagt oder weggeklickt, statt eine Anfrage zu stellen.</p></article>
+            <article className="card"><img className="problemImage" src={symptomEnquiries} alt="Besucher kommen auf eine Website, doch die Anfrage-Ablage bleibt leer" loading="lazy" decoding="async" width="1254" height="1254" /><b>01</b><h3>„Bin ich hier überhaupt richtig?“</h3><p>Wenn Besucher ihr konkretes Problem nicht wiedererkennen, bleibt dein Angebot für sie allgemein. Sie lesen weiter, aber innerlich sind sie noch nicht bei dir.</p></article>
+            <article className="card"><img className="problemImage" src={symptomVisitors} alt="Ein Besucher sieht sich eine Website an, ohne den Kontakt aufzunehmen" loading="lazy" decoding="async" width="1254" height="1254" /><b>02</b><h3>„Was bringt mir das in meiner Situation?“</h3><p>Viele Seiten erklären Leistungen, Methoden oder Abläufe. Der Besucher sucht aber Orientierung: Was ändert sich für ihn, wenn er den nächsten Schritt macht?</p></article>
+            <article className="card"><img className="problemImage" src={symptomExplaining} alt="Ein Unternehmer erklärt sein Angebot wiederholt verschiedenen Menschen" loading="lazy" decoding="async" width="1254" height="1254" /><b>03</b><h3>„Warum sollte ich jetzt handeln?“</h3><p>Wenn Vertrauen, Klarheit oder Richtung fehlen, wirkt der CTA wie ein Sprung. Dann wird verglichen, vertagt oder weggeklickt, statt eine Anfrage zu stellen.</p></article>
           </div>
         </Section>
 
         <Section alt eye="Zu wenige passende Anfragen?" title="Deine Website wird besucht. Doch passende Anfragen bleiben aus." intro="Vielleicht erklärst du dein Angebot im Gespräch immer wieder, weil auf deiner Website nicht schnell klar wird, für wen es gedacht ist und warum es zur Situation deiner Zielgruppe passt. Du bekommst eine Einschätzung zu drei möglichen Hürden: Conversion & Nutzerführung, Copy & Positionierung sowie SEO & Suchintention.">
-          <div className="grid3 diag">{diagnostics.map((x) => <article className="card" key={x[0]}><img className="diagImage" src={x[3]} alt={x[4]} /><b>{x[0]}</b><h3>{x[1]}</h3><p>{x[2]}</p></article>)}</div>
+          <div className="grid3 diag">{diagnostics.map((x) => <article className="card" key={x[0]}><img className="diagImage" src={x[3]} alt={x[4]} loading="lazy" decoding="async" width="1254" height="1254" /><b>{x[0]}</b><h3>{x[1]}</h3><p>{x[2]}</p></article>)}</div>
         </Section>
 
         <Section id="ablauf" eye="So funktioniert das Röntgen" title="In drei Schritten weißt du, wo du ansetzen solltest.">
-          <div className="grid3 steps">{steps.map((x) => <article key={x[0]}><img className="stepImage" src={x[3]} alt={x[4]} /><b>{x[0]}</b><h3>{x[1]}</h3><p>{x[2]}</p></article>)}</div>
+          <div className="grid3 steps">{steps.map((x) => <article key={x[0]}><img className="stepImage" src={x[3]} alt={x[4]} loading="lazy" decoding="async" width="1254" height="1254" /><b>{x[0]}</b><h3>{x[1]}</h3><p>{x[2]}</p></article>)}</div>
         </Section>
 
                 <Section id="ueber-mich" eye="Wer deine Website röntgt" title="Thomas Olesch" intro="Conversion Copywriter">
-          <div className="profileCard"><img src={thomasProfile} alt="Thomas Olesch" className="profileImg" /><div className="profileBody"><p>Du bekommst zu wenige passende Anfragen, obwohl Menschen deine Website besuchen. Im Gespräch erklärst du dein Angebot oft noch einmal von vorn, weil auf der Seite nicht klar wird, warum es zum Problem deines Gegenübers passt.</p><p>Wenn du zu wenige passende Anfragen bekommst, obwohl Menschen deine Website besuchen, bleibt eine entscheidende Frage: Erkennen sie schnell genug, warum dein Angebot zu ihrer Situation passt?</p><p>Beim Website-Röntgen bekommst du eine persönliche Prüfung deiner Positionierung, deiner Texte und des Wegs von der Google-Suche auf deine Website. Danach kennst du die drei Hebel, bei denen du zuerst ansetzen solltest.</p><div className="credentials" aria-label="Ausbildung und Copywriting-Community"><a className="credential" href="https://www.freedom-writer.de/" target="_blank" rel="noreferrer"><img className="credentialLogo" src={freedomWriterLogo} alt="Freedom Writer Academy Logo" /><span><strong>Freedom Writer Academy</strong><small>Ausgebildet bei Philipp Follmer</small></span><ExternalLink /></a><a className="credential" href="https://www.the-copy-club.com/" target="_blank" rel="noreferrer"><img className="credentialLogo" src={copyClubLogo} alt="The Copy Club Logo" /><span><strong>The Copy Club</strong><small>Aktives Community-Mitglied · Markus Bocionek</small></span><ExternalLink /></a></div></div></div>
+          <div className="profileCard"><img src={thomasProfile} alt="Thomas Olesch" className="profileImg" loading="lazy" decoding="async" width="1122" height="1402" /><div className="profileBody"><p>Du bekommst zu wenige passende Anfragen, obwohl Menschen deine Website besuchen. Im Gespräch erklärst du dein Angebot oft noch einmal von vorn, weil auf der Seite nicht klar wird, warum es zum Problem deines Gegenübers passt.</p><p>Wenn du zu wenige passende Anfragen bekommst, obwohl Menschen deine Website besuchen, bleibt eine entscheidende Frage: Erkennen sie schnell genug, warum dein Angebot zu ihrer Situation passt?</p><p>Beim Website-Röntgen bekommst du eine persönliche Prüfung deiner Positionierung, deiner Texte und des Wegs von der Google-Suche auf deine Website. Danach kennst du die drei Hebel, bei denen du zuerst ansetzen solltest.</p><div className="credentials" aria-label="Ausbildung und Copywriting-Community"><a className="credential" href="https://www.freedom-writer.de/" target="_blank" rel="noreferrer"><img className="credentialLogo" src={freedomWriterLogo} alt="Freedom Writer Academy Logo" loading="lazy" decoding="async" width="1084" height="576" /><span><strong>Freedom Writer Academy</strong><small>Ausgebildet bei Philipp Follmer</small></span><ExternalLink /></a><a className="credential" href="https://www.the-copy-club.com/" target="_blank" rel="noreferrer"><img className="credentialLogo" src={copyClubLogo} alt="The Copy Club Logo" loading="lazy" decoding="async" width="225" height="225" /><span><strong>The Copy Club</strong><small>Aktives Community-Mitglied · Markus Bocionek</small></span><ExternalLink /></a></div></div></div>
         </Section>
 
         <section><div className="wrap"><p className="eye">Und danach?</p><h2>Du bekommst zuerst Klarheit. Was du daraus machst, entscheidest du.</h2><p className="intro">Der Website-Röntgen ist kostenlos. Ich zeige dir deine drei wichtigsten Hebel und sage dir auch, was du selbst verändern kannst. Wenn wir dabei feststellen, dass du Unterstützung brauchst, können wir danach gemeinsam an der Umsetzung arbeiten – zum Beispiel an deiner Positionierung, deinen Website- oder Landingpage-Texten, SEO, E-Mail-Marketing oder der gesamten Conversion-Strecke. Erst kommt der Befund. Dann entscheiden wir, was überhaupt sinnvoll ist.</p></div></section>
@@ -192,5 +192,18 @@ function Thanks() {
   );
 }
 
-const path = location.pathname;
-createRoot(document.getElementById('root')!).render(path === '/impressum' ? <Legal /> : path === '/datenschutz' ? <Legal privacy /> : path === '/danke' ? <Thanks /> : <Home />);
+export function Page({ path }: { path: string }) {
+  const route = path.replace(/\/+$/, '') || '/';
+  if (route === '/impressum') return <Legal />;
+  if (route === '/datenschutz') return <Legal privacy />;
+  if (route === '/danke') return <Thanks />;
+  if (route === '/') return <Home />;
+  return <><Header /><main className="legal"><h1>Seite nicht gefunden</h1><p>Diese Adresse ist nicht vorhanden.</p><a href="/">Zur Startseite</a></main><Footer /></>;
+}
+
+if (typeof document !== 'undefined') {
+  const root = document.getElementById('root')!;
+  const page = <Page path={location.pathname} />;
+  if (root.hasChildNodes()) hydrateRoot(root, page);
+  else createRoot(root).render(page);
+}
